@@ -72,4 +72,57 @@
 # print(my_list)
 
 
+# Dictionaries in python, created with {}, can be accessed using bracket[] notation, data stored as "key": "value" pairs, dictionaries are not ordered, can not be sorted, and are accessed by their keys. Much like javascript objects. Numbers can also be used as keys.
+# dict = {1: 100, "k2": "Hello World", "k3": [1,2,3,4]}
+# print(dict[1])
+# print(dict["k2"][6:])
+# print(dict["k3"][2])
+# # you can add new key value pairs and also re-assign existing keys to new values
+# dict["k4"] = "This was not here when the dictionary was first made"
+# print(dict)
+# dict[1] = "This used to be the number 100"
+# print(dict)
+# # create a list of all keys and/or values from a dictionary, by using the list() to wrap around the dict.keys() we actually get back a list we can work with, if we don't do it we get back something that is read-only
+# dict_keys = list(dict.keys())
+# print(dict_keys[2])
+
+# # turning a list into a tuple, tuples are designated with parenthesis (), they are immutable, and have minimal built in methods
+# new_list = [1,2,3,4]
+# print(new_list.count(2))
+# list_into_tuple = tuple(new_list)
+# print(new_list)
+# print(list_into_tuple)
+# print(type(new_list))
+# print(type(list_into_tuple))
+
+# Sets in python, sets are unordered collections of unique elements, this means that if the string "hello" was added twice it would only keep 1 of them. This also means if we have a list of objects that could have some duplicates and we want to easily get rid of them and only keep unique values then we could add the list to a "set" and it would handle it.
+
+# sets are created like this
+# new_set = set()
+# new_set.add(1)
+# new_set.add(1)
+# new_set.add(1)
+# # sets are shown with {}, but they do not have key:value pairs and can therefor be distinguished from dictionaries. Notice that we add(1) three times, but when we print() we only see it in their once.
+# print(new_set)
+# var_one = 1
+# var_two = 1
+# new_set.add(var_one)
+# new_set.add(var_two)
+# # notice that even though we have different variables created with the value 1 on it, they are still not added to the "set"
+# print(new_set)
+
+# create a new .txt file in the same working directory is the .py file
+# first argument is the name of the file and extension, second argument is the mode. "w" creates a new file and adds text, it will overwrite anything there. "a" creates a new file and writes to it, it will append to anything that already exists. "x" creates a new file, unless one already exists and then it does nothing. "r" is for reading, it will fail if no file already exists
+with open("hello.txt", "w") as f: 
+    f.write("This is a new text file! \nAnd this is on a new line!!!")
+
+# log to the contents to the terminal
+my_file = open("hello.txt")
+print(my_file.read())
+# .seek() resets the cursor back to the start of the file
+my_file.seek(0)
+# creates a list of each line of the text file
+print(my_file.readlines())
+my_file.close()
+
 
